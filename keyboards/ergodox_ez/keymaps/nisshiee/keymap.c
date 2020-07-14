@@ -15,7 +15,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /* Keymap 0: Basic layer
  *
  * ,--------------------------------------------------.           ,-------------------------------------------------.
- * | Esc    |   1  |   2  |   3  |   4  |   5  | LEFT |           | RIGHT|   6  |   7   |   8  |   9  |   0  |   -  |
+ * | Esc    |   1  |   2  |   3  |   4  |   5  | 英数 |           | かな |   6  |   7   |   8  |   9  |   0  |   -  |
  * |--------+------+------+------+------+-------------|           |------+------+-------+------+------+------+------|
  * | Tab    |   Q  |   W  |   E  |   R  |   T  | Opt+Z|           |Sft+En|   Y  |   U   |   I  |   O  |   P  |   @  |
  * |--------+------+------+------+------+------|      |           |      |------+-------+------+------+------+------|
@@ -23,7 +23,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |--------+------+------+------+------+------| Space|           | Enter|------+-------+------+------+------+------|
  * | LShift |   Z  |   X  |   C  |   V  |   B  |      |           |      |   N  |   M   |   ,  |   .  |   /  |   _  |
  * `--------+------+------+------+------+-------------'           `-------------+-------+------+------+------+------'
- *   |  BS  |  Del |AltShf|LShift|英数/L1|                                       |かな/L2|   [  |   ]  |   ^  | ¥   |
+ *   |  BS  |  Del |AltShf|LShift|  L1  |                                       |  L2   |   [  |   ]  |   ^  | ¥   |
  *   `----------------------------------'                                       `----------------------------------'
  *                                        ,-------------.       ,---------------.
  *                                        | LSft | Tab  |       | Left | Right  |
@@ -37,20 +37,20 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 // Otherwise, it needs KC_*
 [BASE] = LAYOUT_ergodox(  // layer 0 : default
         // left hand
-        KC_ESC,    KC_1,    KC_2,   KC_3,   KC_4,     KC_5,   KC_LEFT,
+        KC_ESC,    KC_1,    KC_2,   KC_3,   KC_4,     KC_5,   JP_MEISU,
         KC_TAB,    KC_Q,    KC_W,   KC_E,   KC_R,     KC_T,   LALT(KC_Z),
         KC_LCTRL,  KC_A,    KC_S,   KC_D,   KC_F,     KC_G,
         KC_LSFT,   KC_Z,    KC_X,   KC_C,   KC_V,     KC_B,   KC_SPC,
-        KC_BSPACE, KC_DEL,  LALT(KC_LSFT),  KC_LSHIFT,LT(SYMB, JP_MEISU),
+        KC_BSPACE, KC_DEL,  LALT(KC_LSFT),  KC_LSHIFT,MO(SYMB),
                                               KC_LSHIFT,  KC_TAB,
                                                               KC_HOME,
                                         CTL_T(KC_SPC),KC_LALT,KC_LCMD,
         // right hand
-             KC_RGHT,     KC_6,   KC_7,   KC_8,   KC_9,   KC_0,             KC_MINS,
+             JP_MKANA,     KC_6,   KC_7,   KC_8,   KC_9,   KC_0,             KC_MINS,
              LSFT(KC_ENT),       KC_Y,   KC_U,   KC_I,   KC_O,   KC_P,             JP_AT,
                           KC_H,   KC_J,   KC_K,   KC_L,   KC_SCLN,           JP_COLN,
              KC_ENTER,KC_N,   KC_M,   KC_COMM,KC_DOT, KC_SLSH,   JP_UNDS,
-                                  LT(MDIA, JP_MKANA),  JP_LBRC,JP_RBRC,JP_CIRC,JP_YEN,
+                                  MO(MDIA),  JP_LBRC,JP_RBRC,JP_CIRC,JP_YEN,
              KC_LEFT,        KC_RIGHT,
              KC_UP,
              KC_DOWN,KC_LSFT,LCMD_T(KC_ENT)

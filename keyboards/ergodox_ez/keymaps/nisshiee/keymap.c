@@ -66,14 +66,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |--------+------+------+------+------+------| Space|           | Enter|------+-------+------+------+------+------|
  * | LShift |   Z  |   X  |   C  |   V  |   B  |      |           |      |   N  |   M   |   ,  |   .  |   /  |   _  |
  * `--------+------+------+------+------+-------------'           `-------------+-------+------+------+------+------'
- *   |  BS  |  Del |AltShf|LShift|英数/L1|                                       |かな/L2|   [  |   ]  |   ^  | ¥   |
+ *   |  BS  |  Del |全/半 |LShift|英数/L1|                                       |かな/L2|   [  |   ]  |   ^  | ¥   |
  *   `----------------------------------'                                       `----------------------------------'
  *                                        ,-------------.       ,---------------.
  *                                        | LSft | Tab  |       | Left | Right  |
  *                                 ,------|------|------|       |------+--------+------.
  *                                 |      |      | Home |       |  Up  |        |      |
- *                                 |Space/|Option|------|       |------| LShift |Enter/|
- *                                 |Ctrl  |      | Cmd  |       | Down |        |Cmd   |
+ *                                 |Space/|LAlt  |------|       |------| LShift |Enter/|
+ *                                 |Ctrl  |      | WIN  |       | Down |        |Cmd   |
  *                                 `--------------------'       `----------------------'
  */
 // If it accepts an argument (i.e, is a function), it doesn't need KC_.
@@ -84,10 +84,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_TAB,    KC_Q,    KC_W,   KC_E,   KC_R,     KC_T,   LALT(KC_Z),
         KC_LCTRL,  KC_A,    KC_S,   KC_D,   KC_F,     KC_G,
         KC_LSFT,   KC_Z,    KC_X,   KC_C,   KC_V,     KC_B,   KC_SPC,
-        KC_BSPACE, KC_DEL,  LALT(KC_LSFT),  KC_LSHIFT,LT(SYMB, JP_MHEN),
+        KC_BSPACE, KC_DEL,  JP_ZHTG,  KC_LSHIFT,LT(SYMB, JP_MHEN),
                                                       KC_LSHIFT,  KC_TAB,
                                                                   KC_HOME,
-                                            CTL_T(KC_SPC),KC_LWIN,KC_LALT,
+                                            CTL_T(KC_SPC),KC_LALT,KC_LWIN,
         // right hand
         KC_RGHT,     KC_6,   KC_7,   KC_8,   KC_9,   KC_0,             KC_MINS,
         LSFT(KC_ENT),       KC_Y,   KC_U,   KC_I,   KC_O,   KC_P,             JP_AT,
